@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles, createTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core";
 import Navbar from "./Navbar";
-import Canvas from "./Canvas";
-import { Box, Card, CardContent, Grid, ThemeProvider } from "@material-ui/core";
+import CanvasContainer from "./CanvasContainer";
 
 //maybe add custom theme
 const useStyles = makeStyles((theme) => ({
@@ -34,32 +34,7 @@ export default function DigitsPage() {
     <ThemeProvider theme={theme}>
       <div style={{ height: "100%" }}>
         <Navbar classes={classes} />
-        <Box
-          height="90vh"
-          color="text.primary"
-          //bgcolor={theme.palette.secondary.main}
-        >
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            style={{ height: "inherit" }}
-          >
-            <Grid item>
-              <Card
-                raised
-                style={{
-                  backgroundColor: theme.palette.secondary.main,
-                }}
-              >
-                <CardContent>
-                  <Canvas />
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
+        <CanvasContainer theme={theme} />
       </div>
     </ThemeProvider>
   );

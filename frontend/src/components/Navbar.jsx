@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { Toolbar } from "@material-ui/core";
+import { ButtonGroup, Toolbar } from "@material-ui/core";
 
 export default function Navbar(props) {
   const { classes } = props;
@@ -10,18 +10,26 @@ export default function Navbar(props) {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          Digits App
+          Digits by Daniel Johnson
         </Typography>
 
-        <Button
-          variant="contained"
-          color="default"
-          onClick={() => {
-            window.open("https://github.com/DanielRJohnson");
-          }}
-        >
-          My GitHub
-        </Button>
+        <ButtonGroup color="secondary" variant="contained">
+          <Button
+            onClick={() => {
+              window.open("https://github.com/DanielRJohnson");
+            }}
+          >
+            My GitHub
+          </Button>
+
+          <Button
+            onClick={() => {
+              window.open("https://github.com/DanielRJohnson/nn-digits-app");
+            }}
+          >
+            Project Repo
+          </Button>
+        </ButtonGroup>
       </Toolbar>
     </AppBar>
   );
