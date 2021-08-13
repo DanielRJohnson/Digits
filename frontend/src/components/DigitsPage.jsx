@@ -2,9 +2,8 @@ import React from "react";
 import { makeStyles, createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core";
 import Navbar from "./Navbar";
-import CanvasContainer from "./CanvasContainer";
+import AppBody from "./AppBody";
 
-//maybe add custom theme
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -34,7 +33,7 @@ export default function DigitsPage() {
     <ThemeProvider theme={theme}>
       <div style={{ height: "100%" }}>
         <Navbar classes={classes} />
-        <CanvasContainer theme={theme} />
+        <AppBody theme={theme} />
       </div>
     </ThemeProvider>
   );
